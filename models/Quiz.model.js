@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const QuizSchema = new mongoose.Schema(
+const QuizSchema = new Schema(
 	{
 		title: {
 			type: String,
@@ -15,6 +16,12 @@ const QuizSchema = new mongoose.Schema(
 			type: Number,
 			required: true,
 		},
+		questions: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: "Question",
+			},
+		],
 	},
 	{
 		timestamps: true,
