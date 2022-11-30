@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Mock = require("../models/mockModel");
+const Mock = require("../models/MockModel");
 const MockQuestion = require("../models/MockQuestion.model");
 
 // @desc    Get mock

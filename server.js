@@ -20,6 +20,9 @@ app.use("/quiz", require("./routes/quizRoutes"));
 // Mock Route
 app.use("/mock", require("./routes/mockRoutes"));
 
+// Exam Route
+app.use("/mock/exam", require("./routes/ExamRoutes"));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
