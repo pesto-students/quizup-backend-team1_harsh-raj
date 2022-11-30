@@ -6,9 +6,9 @@ const Question = require("../models/Question.model");
 // @route   GET /quiz
 router.get("/", async (req, res) => {
 	try {
-		const quizzes = await Quiz.find().populate("questions").lean();
+		const quizzes = await Quiz.find().populate("questions");
 
-		res.json(quizzes);
+		res.send(quizzes);
 	} catch (err) {
 		console.log(err);
 		res.end("error");
@@ -31,21 +31,25 @@ router.post("/", async (req, res) => {
 // @route   POST /quiz/question
 router.post("/question", async (req, res) => {
 	try {
-		const quizId = req.body.id;
+		const quiz = await Quiz.findById(req.body.id).lean();
+
+		if (!quiz) throw new Error("Quiz not found");
+
 		const newQuestion = await Question.create({
-			question: "This is a sample question?",
+			question: "This is a new another question?",
 			options: ["option 1", "option 2", "option 3", "option 4"],
 			answer: "option 3",
 		});
 
-		const quiz = await Quiz.findById(quizId);
+		await Quiz.updateOne(
+			{ _id: req.body.id },
+			{ $push: { questions: newQuestion._id } }
+		);
 
-		quiz.questions.push(newQuestion);
-
-		res.send(`question added to quiz id: ${quizId}`);
+		res.send(`question added to quiz`);
 	} catch (err) {
 		console.log(err);
-		res.end("error");
+		res.end(err.message);
 	}
 });
 

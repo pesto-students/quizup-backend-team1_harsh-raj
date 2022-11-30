@@ -7,10 +7,6 @@ const QuestionSchema = new mongoose.Schema({
 	},
 	options: [{ type: String }],
 	answer: String,
-	quiz: {
-		type: mongoose.Types.ObjectId,
-		ref: "Quiz",
-	},
 });
 
 module.exports = mongoose.model("Question", QuestionSchema);

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const Schema = mongoose.Schema;
 
 const QuizSchema = new Schema(
 	{
@@ -18,7 +18,7 @@ const QuizSchema = new Schema(
 		},
 		questions: [
 			{
-				type: Schema.Types.ObjectId,
+				type: mongoose.Schema.Types.ObjectId,
 				ref: "Question",
 			},
 		],
