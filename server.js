@@ -18,10 +18,10 @@ app.use(express.json());
 app.use("/api/quiz", require("./routes/quizRoutes"));
 
 // Mock Route
-app.use("/mock", require("./routes/mockRoutes"));
+app.use("/api/test", require("./routes/mockRoutes"));
 
 // Exam Route
-app.use("/mock/exam", require("./routes/ExamRoutes"));
+app.use("/api/exam", require("./routes/ExamRoutes"));
 
 const PORT = process.env.PORT || 5000;
 
