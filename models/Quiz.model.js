@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const Schema = mongoose.Schema;
 
 const QuizSchema = new Schema(
 	{
@@ -18,10 +18,14 @@ const QuizSchema = new Schema(
 		},
 		questions: [
 			{
-				type: Schema.Types.ObjectId,
-				ref: "Question",
+				type: mongoose.Schema.Types.ObjectId,
+				// refPath: "question_type",
 			},
 		],
+		// question_type: {
+		//   type: String,
+		// 	enum: ["QuestionMCQ", "QuestionTF"],
+		// },
 	},
 	{
 		timestamps: true,
