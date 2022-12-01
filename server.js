@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Routes
-app.use("/quiz", require("./routes/quizRoutes"));
+app.use("/api/quiz", require("./routes/quizRoutes"));
 
 const PORT = process.env.PORT || 5000;
 

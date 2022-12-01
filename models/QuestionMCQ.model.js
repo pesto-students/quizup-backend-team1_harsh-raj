@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const QuestionSchema = new mongoose.Schema({
+const QuestionMCQSchema = new mongoose.Schema({
 	question: {
 		type: String,
 		required: true,
@@ -9,4 +9,4 @@ const QuestionSchema = new mongoose.Schema({
 	answer: String,
 });
 
-module.exports = mongoose.model("Question", QuestionSchema);
+module.exports = mongoose.model("QuestionMCQ", QuestionMCQSchema);
