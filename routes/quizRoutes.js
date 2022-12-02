@@ -15,6 +15,18 @@ router.get("/", async (req, res) => {
 	}
 });
 
+// @desc    Get five quizzes
+// @route   GET /api/quiz/5
+router.get("/5", async (req, res) => {
+	try {
+		const quizzes = await Quiz.find().sort({ createdAt: -1 }).limit(5);
+		res.status(200).json(quizzes);
+	} catch (err) {
+		console.log(err);
+		res.end("error");
+	}
+});
+
 // @desc    Get single quiz
 // @route   GET /api/quiz/:id
 router.get("/:id", async (req, res) => {
