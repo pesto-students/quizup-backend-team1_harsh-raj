@@ -1,6 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const cors = require("cors");
+const morgan = require("morgan");
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
@@ -10,9 +12,14 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
+
 // Body parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Logging
+app.use(morgan("dev"));
 
 // Routes
 app.use("/api/quiz", require("./routes/quizRoutes"));
