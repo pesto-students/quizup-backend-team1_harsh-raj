@@ -17,6 +17,12 @@ app.use(express.json());
 // Routes
 app.use("/api/quiz", require("./routes/quizRoutes"));
 
+// Mock Route
+app.use("/api/test", require("./routes/mockRoutes"));
+
+// Exam Route
+app.use("/api/exam", require("./routes/ExamRoutes"));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
