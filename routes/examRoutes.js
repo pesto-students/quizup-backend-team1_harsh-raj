@@ -14,6 +14,18 @@ router.get("/", async (req, res) => {
 	}
 });
 
+// @desc    Get five Exams (for user dashboard)
+// @route   GET /api/exam/5
+router.get("/5", async (req, res) => {
+	try {
+		const exams = await Exam.find().sort({ createdAt: -1 }).limit(5);
+		res.status(200).json(exams);
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).json("error");
+	}
+});
+
 // @desc    Get all tests in a single exam
 // @route   GET /api/exam/:id
 router.get("/:id", async (req, res) => {
