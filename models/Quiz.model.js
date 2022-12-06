@@ -19,13 +19,8 @@ const QuizSchema = new Schema(
 		questions: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
-				refPath: "question_type",
 			},
 		],
-		question_type: {
-			type: String,
-			enum: ["QuestionMCQ", "QuestionTF"],
-		},
 	},
 	{
 		timestamps: true,

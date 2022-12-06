@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Quiz = require("../models/Quiz.model");
 const QuestionMCQ = require("../models/QuestionMCQ.model");
 const QuestionTF = require("../models/QuestionTF.model");
+const mongoose = require("mongoose");
 
 // @desc    Get all quizzes
 // @route   GET /api/quiz
@@ -31,21 +32,38 @@ router.get("/5", async (req, res) => {
 // @route   GET /api/quiz/:id
 router.get("/:id", async (req, res) => {
 	try {
-		const quiz = await Quiz.findById(req.params.id)
-			.populate({
-				path: "questions",
-				model: "QuestionMCQ",
-			})
-			.populate({
-				path: "questions",
-				model: "QuestionTF",
-			})
-			.lean();
+		const id = req.params.id;
+		console.log(id);
+		const quiz = await Quiz.aggregate([
+			{ $match: { _id: mongoose.Types.ObjectId(req.params.id) } },
+			{
+				$lookup: {
+					from: "questiontfs",
+					localField: "questions",
+					foreignField: "_id",
+					as: "questionstf",
+				},
+			},
+			{
+				$lookup: {
+					from: "questionmcqs",
+					localField: "questions",
+					foreignField: "_id",
+					as: "questionsmcq",
+				},
+			},
+			// {
+			// 	$group: {
+			// 		_id: "$title",
+			// 		allQuestions: { $push: "$questionstf" },
+			// 	},
+			// },
+		]);
 
 		res.status(200).json(quiz);
 	} catch (err) {
 		console.log(err);
-		res.end("error");
+		res.status(400).end("error");
 	}
 });
 
@@ -54,7 +72,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
 	try {
 		await Quiz.create(req.body);
-		res.send("new quiz created");
+		res.status(201).send("new quiz created");
 	} catch (err) {
 		console.log(err);
 		res.end("error");
@@ -75,6 +93,7 @@ router.post("/:id", async (req, res) => {
 
 		Promise.all(
 			questionsArray.map(async (question) => {
+				question.quizId = quiz._id;
 				if (question.type === "mcq") {
 					let newQues = await QuestionMCQ.create(question);
 					questionIdsArr.push(newQues._id);

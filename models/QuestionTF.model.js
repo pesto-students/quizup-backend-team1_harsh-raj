@@ -12,6 +12,10 @@ const QuestionTFSchema = new mongoose.Schema({
 		},
 	],
 	answer: String,
+	quizId: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Quiz",
+	},
 });
 
 module.exports = mongoose.model("QuestionTF", QuestionTFSchema);

@@ -7,6 +7,10 @@ const QuestionMCQSchema = new mongoose.Schema({
 	},
 	options: [{ type: String }],
 	answer: String,
+	quizId: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Quiz",
+	},
 });
 
 module.exports = mongoose.model("QuestionMCQ", QuestionMCQSchema);
