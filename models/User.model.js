@@ -40,6 +40,12 @@ const UserSchema = new schema(
 				wrong_answers: Number,
 			},
 		],
+		bank_details: {
+			account_no: String,
+			ifs_code: String,
+		},
+		skills: [{ String }],
+		about: String,
 	},
 	{
 		timestamps: true,
