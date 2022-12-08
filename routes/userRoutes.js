@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const jwt_decode = require("jwt-decode");
 const User = require("../models/User.model");
 
 router.post("/login", async (req, res) => {
 	try {
 		const userData = req.body;
-		console.log(userData);
 
 		if (!userData) {
 			res.status(401);
