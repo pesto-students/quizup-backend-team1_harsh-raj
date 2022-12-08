@@ -56,6 +56,8 @@ app.use("/api/test", require("./routes/mockRoutes"));
 // Exam Route
 app.use("/api/exam", require("./routes/ExamRoutes"));
 
+app.use("/api/users", require("./routes/userRoutes"));
+
 // Auth Route
 app.use("/auth", require("./routes/authRoutes"));
 

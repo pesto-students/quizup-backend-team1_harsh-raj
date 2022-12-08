@@ -13,7 +13,10 @@ router.get(
 		successRedirect: "http://localhost:3000/dashboard",
 		failureRedirect: "http://localhost:3000/login",
 		passReqToCallback: true,
-	})
+	}),
+	(req, res) => {
+		res.status(200);
+	}
 );
 
 // @desc  Logout
