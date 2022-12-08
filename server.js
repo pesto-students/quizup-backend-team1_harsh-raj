@@ -12,7 +12,13 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(
+	cors({
+		origin: "http://localhost:3000",
+		methods: "GET,POST,PUT,DELETE",
+		credentials: true,
+	})
+);
 
 // Body parser
 app.use(express.urlencoded({ extended: false }));
@@ -23,12 +29,9 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api/quiz", require("./routes/quizRoutes"));
-
-// Mock Route
 app.use("/api/test", require("./routes/mockRoutes"));
-
-// Exam Route
-app.use("/api/exam", require("./routes/ExamRoutes"));
+app.use("/api/exam", require("./routes/examRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 const PORT = process.env.PORT || 5000;
 
