@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3a60744f-678f-4f08-a360-7d2e2dcb6560/deploy-status)](https://app.netlify.com/sites/pesto-n8-dbacs/deploys)
 
-<h1><img align="center" height="35" src="./public/images/logo.png"> QuizUp</h1>
+<h1><img align="center" height="35" src="./images/logo.png"> QuizUp</h1>
 
 Preparation for any exam is incomplete without mock tests and quizzes.
 <br/>
