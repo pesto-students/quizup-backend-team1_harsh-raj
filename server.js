@@ -12,11 +12,20 @@ connectDB();
 
 const app = express();
 
+let whitelist = [
+	"http://localhost:3000",
+	"https://quizup-frontend-team1-harsh-raj.vercel.app",
+];
 app.use(
 	cors({
-		origin: "https://quizup-frontend-team1-harsh-raj.vercel.app",
+		origin: function (origin, callback) {
+			if (whitelist.indexOf(origin) !== -1) {
+				callback(null, true);
+			} else {
+				callback(new Error("Not allowed by CORS"));
+			}
+		},
 		methods: "GET,POST,PUT,DELETE",
-		credentials: true,
 	})
 );
 
