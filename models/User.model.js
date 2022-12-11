@@ -28,6 +28,7 @@ const UserSchema = new schema(
 		},
 		mock_test_given: [
 			{
+				testId: schema.Types.ObjectId,
 				title: String,
 				total_questions: Number,
 				questions_attempted: Number,
@@ -37,6 +38,7 @@ const UserSchema = new schema(
 		],
 		quiz_given: [
 			{
+				quizId: schema.Types.ObjectId,
 				title: String,
 				total_questions: Number,
 				questions_attempted: Number,
