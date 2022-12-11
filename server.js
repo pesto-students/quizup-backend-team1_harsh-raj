@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: "https://quizup-frontend-team1-harsh-raj.vercel.app/",
 		methods: "GET,POST,PUT,DELETE",
 		credentials: true,
 	})
