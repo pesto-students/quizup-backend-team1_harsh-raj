@@ -1,16 +1,13 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3a60744f-678f-4f08-a360-7d2e2dcb6560/deploy-status)](https://app.netlify.com/sites/pesto-n8-dbacs/deploys)
+<!-- ![QuizUp](./quizup-logo-gradient.png)
+
+## QuizUp -->
 
 <h1><img align="center" height="35" src="./images/logo.png"> QuizUp</h1>
 
-Preparation for any exam is incomplete without mock tests and quizzes.
-<br/>
-That is why we will create a gamified platform for people who are preparing for various government exams/ IT exams.
-<br/>
-It will enable them to give mock tests and skill based quizzes in a fun and interactive way while gaining tips for areas of improvement.
-<br/>
-They will feel like playing a game while testing their skills.
+This is the backend repo for QuizUp web app.
+It is an app in which users can take part in exciting quizzes and quality mock tests.
 
-<br/>
+Preparation for any exam is incomplete without mock tests and quizzes. It is very important for users to get good quality resources to test their skills.
 
 # Table of Contents
 
