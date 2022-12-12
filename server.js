@@ -26,6 +26,7 @@ app.use(
 			}
 		},
 		methods: "GET,POST,PUT,DELETE",
+		withCredentials: true,
 	})
 );
 
