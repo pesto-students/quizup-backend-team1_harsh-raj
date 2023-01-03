@@ -15,6 +15,7 @@ const app = express();
 let whitelist = [
 	"http://localhost:3000",
 	"https://quizup-frontend-team1-harsh-raj.vercel.app",
+	"https://quizup-webapp.vercel.app",
 ];
 app.use(
 	cors({
