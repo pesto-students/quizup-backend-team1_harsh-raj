@@ -85,6 +85,11 @@ router.post("/login", async (req, res) => {
 
 		let user = await User.findOne({ email: userEmail });
 
+		if (!user) {
+			res.status(404);
+			throw new Error("User not found");
+		}
+
 		if (user) {
 			res.status(200).json({
 				firstName: user.firstName,
@@ -116,8 +121,30 @@ router.post("/login", async (req, res) => {
 	}
 });
 
+// @desc Demo user login
+// @route POST /api/user/demo
+router.post("/demo", async (req, res) => {
+	try {
+		const user = await User.findOne({ email: "demo@gmail.com" }).lean();
+
+		if (!user) {
+			res.status(404);
+			throw new Error("User not found");
+		} else {
+			res.status(200).json({
+				firstName: user.firstName,
+				fullName: user.displayName,
+				email: user.email,
+				message: "Logged In",
+			});
+		}
+	} catch (err) {
+		console.log(err);
+	}
+});
+
 // @desc	Get user data
-// @route	post /api/users/
+// @route	post /api/users/getme
 router.post("/getme", async (req, res) => {
 	try {
 		const data = req.body;
