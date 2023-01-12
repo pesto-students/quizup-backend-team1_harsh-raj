@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 // @route   GET /api/exam/5
 router.get("/5", async (req, res) => {
 	try {
-		const exams = await Exam.find().sort({ createdAt: -1 }).limit(5);
+		const exams = await Exam.find().limit(5);
 		res.status(200).json(exams);
 	} catch (err) {
 		console.log(err.message);
