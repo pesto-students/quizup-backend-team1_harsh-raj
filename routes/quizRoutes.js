@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 // @route   GET /api/quiz
 router.get("/", async (req, res) => {
 	try {
-		const quizzes = await Quiz.find();
+		const quizzes = await Quiz.find().sort({ createdAt: -1 });
 		res.status(200).json(quizzes);
 	} catch (err) {
 		console.log(err);
