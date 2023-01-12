@@ -16,6 +16,10 @@ const QuizSchema = new Schema(
 			type: Number,
 			required: true,
 		},
+		image: {
+			type: String,
+			required: true,
+		},
 		questions: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
