@@ -1,7 +1,5 @@
 <h1><img align="center" height="45" src="./images/logo.png"> QuizUp</h1>
 
----
-
 This is the backend repository for QuizUp web app. The tech stack used in this project is Node JS with Express JS framework, along with other important libraries which are mentioned in the Technology Stack section below.
 
 To visit the frontend respository, please click [here](https://github.com/pesto-students/quizup-frontend-team1_harsh-raj).
