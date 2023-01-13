@@ -1,13 +1,14 @@
-<!-- ![QuizUp](./quizup-logo-gradient.png)
+<h1><img align="center" height="45" src="./images/logo.png"> QuizUp</h1>
 
-## QuizUp -->
+---
 
-<h1><img align="center" height="35" src="./images/logo.png"> QuizUp</h1>
+This is the backend repository for QuizUp web app. The tech stack used in this project is Node JS with Express JS framework, along with other important libraries which are mentioned in the Technology Stack section below.
 
-This is the backend repo for QuizUp web app.
-It is an app in which users can take part in exciting quizzes and quality mock tests.
+To visit the frontend respository, please click [here](https://github.com/pesto-students/quizup-frontend-team1_harsh-raj).
 
-Preparation for any exam is incomplete without mock tests and quizzes. It is very important for users to get good quality resources to test their skills.
+You can checkout the QuizUp web-app live by clicking [here](https://quizup-webapp.vercel.app).
+
+**QuizUp** is an app in which users can take part in exciting quizzes and quality mock tests. After giving each of the quiz or mock test, the user will be able to see the results. Their results will be stored for future use.
 
 # Table of Contents
 
@@ -21,7 +22,7 @@ Preparation for any exam is incomplete without mock tests and quizzes. It is ver
 
 # Demo
 
-[Live Demo](http://localhost:3000)
+[Live Demo](https://quizup-webapp.vercel.app)
 
 <br/>
 
@@ -29,13 +30,13 @@ Please Note:
 
 1. We recommend using this app in Google Chrome.
 2. Use the app on Laptop/desktop only as of now.
-3. User has an Google Account to Login.
+3. User has a Google Account to Login.
 4. User has Basic understanding of English Language.
 
 <br/>
-Test Credentials:
+To use the app as Test user :
 
-- Click on Try as Demo user button
+- Click on _Try as Demo Student_ button
 
 <br/>
 
@@ -49,18 +50,17 @@ Test Credentials:
 
 # Technology Stack
 
-we wanted to use modern technologies which would enable us to create an efficient, scalable and performance-oriented app.
+This backend has been built using Node JS along with Express framework. Database duties are done by MongoDB Atlas. Some other libraries were also used which are mentioned below :
 <br/>
-Therefore we opted for the following:
 
-- [React](https://reactjs.org/)
-- [React Router](https://reactrouter.com/en/main)
-- [Redux toolkit](https://redux-toolkit.js.org/)
-- [Axios](https://axios-http.com/docs/intro)
-- [Node.js](https://nodejs.org/en/)
-- [Express](https://expressjs.com/)
+<!-- Therefore we opted for the following: -->
+
+- [Node JS](https://nodejs.org)
+- [Express](https://www.npmjs.com/package/express)
 - [MongoDB](https://www.mongodb.com/)
-- [Google 0Auth 2.0](https://developers.google.com/identity/protocols/oauth2)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
+- [CORS](https://www.npmjs.com/package/cors)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
 
 <br/>
 
