@@ -40,6 +40,14 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Routes
+app.get("/", (req, res) => {
+	try {
+		res.status(200).json({ message: "The app is working fine!" });
+	} catch (err) {
+		console.log(err);
+		res.send("error");
+	}
+});
 app.use("/api/quiz", require("./routes/quizRoutes"));
 app.use("/api/test", require("./routes/mockRoutes"));
 app.use("/api/exam", require("./routes/examRoutes"));
