@@ -122,7 +122,7 @@ router.post("/login", async (req, res) => {
 });
 
 // @desc Demo user login
-// @route POST /api/user/demo
+// @route POST /api/users/demo
 router.post("/demo", async (req, res) => {
 	try {
 		const user = await User.findOne({ email: "demo@gmail.com" }).lean();
